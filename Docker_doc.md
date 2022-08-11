@@ -12,6 +12,8 @@ ENV TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
 ENV CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
 ```
 #### Step.2 Install mmsegmentation
+Requirement: 
+1.1.2 <mmcv <=1.3.0
 ```bash
 RUN conda clean --all
 RUN pip install mmcv-full==1.3.0+torch1.6.0+cu101 -f https://download.openmmlab.com/mmcv/dist/index.html
@@ -43,4 +45,5 @@ RUN pip uninstall opencv-python && \
 	pip install opencv-python-headless
 ```
 #### <span style="color:#CF7A73; font-weight:bold">pip3 install --upgrade -r requirements.txt error: these packages do not match the hashes from the requirements file</span> 
-
+#### <span style="color:#CF7A73; font-weight:bold" id="name">NOTE: Redirects are currently not supported in Windows or MacOs. <br/>C:\Users\edward_kuo\Anaconda3\lib\site-packages\torch\distributed\launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated and will be removed in future. Use torchrun. </span>
+**Solution: Run in Linux.**
